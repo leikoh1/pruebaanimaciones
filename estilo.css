@@ -1,0 +1,148 @@
+body{
+    padding:0;
+    margin: 0;
+    display: grid;
+    grid-template-areas: 
+    "nav header"
+    "nav main"
+    "nav main"
+    "footer aside";
+    
+    height: 100vh;
+    font-family: "Open Sans", sans-serif;
+}
+
+nav{
+    grid-area: nav;
+    background-color: rgb(80, 80, 155);
+    color: white;
+}
+
+nav h3{
+    text-align: center;
+}
+
+nav li{
+    list-style: none;
+    margin-top: 20px;
+}
+
+nav li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+nav li a:hover{
+    color: rgb(166, 116, 223);
+}
+
+header{
+    grid-area: header;
+    background-color: rgb(74, 74, 116);
+    text-align: center;
+}
+
+header h1{
+    color: white;
+}
+
+main{
+    grid-area: main;
+    background-color: rgb(190, 190, 209);
+    text-align: center;
+}
+
+.contacto{
+    grid-area: aside;
+    background-color: rgb(88, 69, 158);
+    color: white;
+}
+
+.contacto div{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+.contacto div div a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+footer{
+    grid-area: footer;
+}
+
+/* estilos de la card*/
+.card{
+    width: 300px;
+    border-radius: 10px;
+    box-shadow:  0 1rem 3rem rgba(0,0,0,0.5);
+    margin: 20px;
+    position: relative;
+}
+
+.cardbody{
+    position: absolute;
+    background-color: rgb(160, 153, 180);
+    transform: rotateY(180deg);
+    height: 100%;
+    backface-visibility: hidden;
+    transition: all 1s ease;
+}
+
+.card:hover .cardbody{
+    transform: rotateY(0deg);
+}
+
+.card img{
+    border-radius: 5px;
+    width: 100%;
+}
+
+.cardtitulo{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* medias */
+
+@media (max-width: 576px){
+    body{
+        grid-template-areas: 
+        "nav"
+        "header"
+        "main"
+        "aside"
+        "footer";
+        grid-template-columns: auto auto;
+    }
+
+    nav ul{
+        display: flex;
+        flex: row;
+    }
+
+    .cardbody{
+        position: relative;
+        transform: rotateY(0deg);
+        height: auto;
+        backface-visibility: visible;
+    }
+
+    .card{
+        display: flex;
+        flex-direction: column-reverse;
+        background-color: white;
+    }
+}
+
